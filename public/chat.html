@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <title>Chat App</title>
+
+    <style>
+      body {
+        background-color: #333;
+      }
+      /* Custom styles for the chat app */
+      .chat-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .chat-header {
+        background-color: #93f38c;
+        color: #240303;
+        text-align: center;
+        font: bold;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: larger;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+
+      .chat-body {
+        background-color: #f0f0f0;
+        min-height: 300px;
+        max-height: 400px;
+        overflow-y: auto;
+        border-radius: 0 0 15px 15px;
+        padding: 15px;
+      }
+
+      .chat-footer {
+        background-color: #f0f0f0;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+
+      .chat-footer input[type="text"] {
+        border: none;
+        border-radius: 50px;
+        padding: 10px 15px;
+      }
+
+      #send-button {
+        border-radius: 50px;
+        margin-left: 2vw;
+      }
+
+      .chat-message {
+        margin: 5px;
+      }
+
+      .headers {
+        color: blueviolet;
+        font: bolder;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .imagesss {
+        color: brown;
+        font: bolder;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-dark bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a href="/chat" class="navbar-brand"
+          ><h3 class="imagesss"><span class="headers">TICO</span> CHAT</h3></a
+        >
+        <form class="d-flex" role="search">
+          <button class="btn btn-success" type="submit">
+            <a class="text-light" style="text-decoration: none" href="/index.html">Back</a>
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+          <div class="card chat-card">
+            <div class="card-header chat-header text-primary"><span class="text-danger">TICO</span> CHAT</div>
+            <div class="card-body chat-body" id="chat-box"></div>
+            <div class="card-footer chat-footer">
+              <div class="input-group">
+                <input type="text" class="form-control" id="user-input" placeholder="Type a message..." />
+                <button class="btn btn-primary" id="send-button">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="chat.js"></script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TICO CHAT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <style>
+      body {
+        background-color: #f0f0f0;
+      }
+      .chat-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .chat-header {
+        background-color: #93f38c;
+        color: #240303;
+        text-align: center;
+        font: bold;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: larger;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+      .chat-body {
+        background-color: #f0f0f0;
+        min-height: 300px;
+        max-height: 400px;
+        overflow-y: auto;
+        border-radius: 0 0 15px 15px;
+        padding: 15px;
+      }
+      .chat-footer {
+        background-color: #f0f0f0;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+      .chat-footer input[type="text"] {
+        border: none;
+        border-radius: 50px;
+        padding: 10px 15px;
+      }
+      #send-button {
+        border-radius: 50px;
+        margin-left: 2vw;
+      }
+      .chat-message {
+        margin: 5px;
+      }
+      .headers {
+        color: blueviolet;
+        font: bolder;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .imagesss {
+        color: brown;
+        font: bolder;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-dark bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a href="/chat" class="navbar-brand"
+          ><h3 class="imagesss"><span class="headers">TICO</span> CHAT</h3></a
+        >
+        <form class="d-flex" role="search">
+          <button class="btn btn-success" type="submit">
+            <a class="text-light" style="text-decoration: none" href="/">Back</a>
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+          <div class="card chat-card">
+            <div class="card-header chat-header text-primary"><span class="text-danger">TICO</span> CHAT</div>
+            <div class="card-body chat-body" id="chat-box">
+            </div>
+            <div class="card-footer chat-footer">
+              <div class="input-group">
+                <input type="text" class="form-control" id="user-input" placeholder="Type a message..." />
+                <button class="btn btn-primary" id="send-button">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="chat.js"></script>
+  </body>
+</html> -->
